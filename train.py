@@ -5,7 +5,7 @@ from datetime import datetime
 import hydra
 from omegaconf import DictConfig
 import tensorflow as tf
-from tensorflow.keras.callbacks import (
+from keras.callbacks import (
     EarlyStopping,
     ModelCheckpoint,
     TensorBoard,
