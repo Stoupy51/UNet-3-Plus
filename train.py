@@ -57,8 +57,9 @@ def train(cfg: DictConfig):
         # change number of visible gpus for training
         set_gpus(cfg.USE_MULTI_GPUS.GPU_IDS)
         # change batch size according to available gpus
-        cfg.HYPER_PARAMETERS.BATCH_SIZE = \
-            cfg.HYPER_PARAMETERS.BATCH_SIZE * get_gpus_count()
+        gpu_count = get_gpus_count()
+        if gpu_count > 1:
+            cfg.HYPER_PARAMETERS.BATCH_SIZE = cfg.HYPER_PARAMETERS.BATCH_SIZE * gpu_count
 
     # create folders to store training checkpoints and logs
     create_training_folders(cfg)

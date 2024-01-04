@@ -89,7 +89,7 @@ PREPROCESS_DATA:
 
 
 USE_MULTI_GPUS:
-  VALUE: False  # If True use multiple gpus for training
+  VALUE: True  # If True use multiple gpus for training
   # GPU_IDS: Could be integer or list of integers.
   # In case Integer: if integer value is -1 then it uses all available gpus.
   # otherwise if positive number, then use given number of gpus.

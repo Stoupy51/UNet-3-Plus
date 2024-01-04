@@ -22,8 +22,9 @@ def evaluate(cfg: DictConfig):
         # change number of visible gpus for evaluation
         set_gpus(cfg.USE_MULTI_GPUS.GPU_IDS)
         # change batch size according to available gpus
-        cfg.HYPER_PARAMETERS.BATCH_SIZE = \
-            cfg.HYPER_PARAMETERS.BATCH_SIZE * get_gpus_count
+        gpu_count = get_gpus_count()
+        if gpu_count > 1:
+            cfg.HYPER_PARAMETERS.BATCH_SIZE = cfg.HYPER_PARAMETERS.BATCH_SIZE * gpu_count
 
     # data generator
     val_generator = data_generator.DataGenerator(cfg, mode="VAL")
