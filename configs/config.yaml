@@ -71,7 +71,7 @@ CALLBACKS:
 
 PREPROCESS_DATA:
   RESIZE:
-    VALUE: False  # if True, resize to input height and width
+    VALUE: True  # if True, resize to input height and width
     HEIGHT: ${INPUT.HEIGHT}
     WIDTH: ${INPUT.WIDTH}
 

@@ -68,7 +68,7 @@ def image_to_mask_name(image_name: str):
     replace image with mask
     """
 
-    return image_name.replace('image', 'mask')
+    return image_name.replace('image', 'mask').replace('.jpg', '.png')
 
 
 def postprocess_mask(mask):

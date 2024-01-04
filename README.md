@@ -91,7 +91,7 @@ To train a model call `train.py` with required model type and configurations .
 e.g. To train on base model run
 
 ```
-python train.py MODEL.TYPE=unet3plus USE_MULTI_GPUS.VALUE=True USE_MULTI_GPUS.GPU_IDS=-1
+python train.py MODEL.TYPE=unet3plus
 ```
 
 To evaluate the trained models call `evaluate.py`.
